@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de AFNs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/generate" method="post">
+        <input type="text" name="user_input" placeholder="Introduce un valor">
+        <button type="submit">Generar</button>
+    </form>
+    <div id="output-image">
+        {% if gif_exists %}
+        <img src="{{ url_for('static', filename='RESULTADO.gif') }}" alt="Resultado">
+        <a href="{{ url_for('static', filename='RESULTADO.gif') }}" download>
+            <button>Descargar GIF</button>
+        </a>
+        {% endif %}
+    </div>
+</body>
+
+</html>
