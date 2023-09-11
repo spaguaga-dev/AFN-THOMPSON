@@ -485,7 +485,7 @@ class Thompson:
     def generarAutomataFinitoNoDeterminista(self):
 
         # Borramos el archivo "orden.json" si existe
-        if os.path.exists("orden.json"):
+        if os.path.exists("/tmp/orden.json"):
             os.remove("orden.json")
 
         # Inicializamos una lista para guardar el orden de las operaciones
@@ -575,7 +575,7 @@ class Thompson:
             graficarAutomataFinitoNoDeterminista(stack[-1], numero_transiciones_usadas)
 
         # Al finalizar el bucle, guardamos el orden de las operaciones en "orden.json"
-        with open("orden.json", "w") as file:
+        with open("/tmp/orden.json", "w") as file:
             json.dump({"Orden": orden_operaciones}, file)
         # Retornamos el AFN final
 
