@@ -4,7 +4,7 @@ import json
 import os
 import io
 
-def cargar_pasos(ruta_json="/tmp/orden.json"):
+def cargar_pasos(ruta_json="orden.json"):
     with open(ruta_json, 'r') as file:
         data = json.load(file)
     return data['Orden']
@@ -86,3 +86,4 @@ def crear_gif_thompson():
     archivo_salida = "static/RESULTADO.gif"
     pasos = cargar_pasos()
     crear_gif_desde_imagenes(directorio, archivo_salida, duracion_frame=0.5, repeticiones=10, pasos=pasos)
+

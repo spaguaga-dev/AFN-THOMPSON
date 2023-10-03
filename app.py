@@ -1,3 +1,4 @@
+
 import uvicorn
 from asgiref.wsgi import WsgiToAsgi
 
@@ -16,7 +17,7 @@ asgi_app = WsgiToAsgi(app)
 
 @app.route('/')
 def hello_world():
-    gif_path = "/tmp/RESULTADO.gif"
+    gif_path = "static/RESULTADO.gif"
     gif_exists = os.path.exists(gif_path)
     return render_template('index.html', gif_exists=gif_exists)
 
@@ -33,7 +34,7 @@ def generate():
 
         # ELIMINANDO EL DIRECTORIO DE IMAGENES SI EXISTE
 
-        directorio = "/tmp/AFN_Imagenes"
+        directorio = "AFN_Imagenes"
         if os.path.exists(directorio):
             shutil.rmtree(directorio)
             print(f" - Directorio '{directorio}' eliminado con éxito.")

@@ -5,7 +5,7 @@ import graphviz as gv
 
 def graficarAutomataFinitoNoDeterminista(afn, numero_transiciones=0):
     # Crear el directorio si no existe
-    directorio = "/tmp"
+    directorio = "AFN_Imagenes"
     if not os.path.exists(directorio):
         os.makedirs(directorio)
 
